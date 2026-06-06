@@ -1,7 +1,7 @@
 <b>Members:</b>
 <ul>
     <li>Chu, Avery Simone</li>
-    <li>Saguin, VL Kei</li>
+    <li>Saguin, VL Kirsten Camille "Kei"</li>
     <li>Sia, Justin Michael</li>
     <li>Sy, Prince Matthew</li>
     <li>Tan, Paul Aiden</li>
