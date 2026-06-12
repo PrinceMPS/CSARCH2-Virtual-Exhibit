@@ -64,7 +64,7 @@ Educational comparison includes:
 Activated when a pixel is selected, displaying:
 - Pixel coordinates
 - **RGB values**
-- **HSL values**
+- **HSB and HSL values**
 - **Opacity (Alpha) values**
 - **Hexadecimal representation**
 - **Binary representation**
