@@ -1,46 +1,109 @@
-# Astro Starter Kit: Basics
+# Inside a Digital Image: How Computers Store and Transform Visual Data
 
-```sh
-npm create astro@latest -- --template basics
-```
+### Project Theme: **Digital Image Processing**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## Members
+- Chu, Avery Simone  
+- Saguin, VL Kirsten Camille "Kei"  
+- Sia, Justin Michael  
+- Sy, Prince Matthew  
+- Tan, Paul Aiden  
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Overview
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Every digital image undergoes a series of steps before it appears on a screen. Images may be stored in formats such as **PNG**, **BMP**, **HEIC**, etc, each using different methods for organizing and compressing data. However, before an image can be displayed or modified, the computer must **decode the file** and load its contents into memory as **pixel data**.
 
-## 🧞 Commands
+Once in memory, the image is represented as **numerical values** describing the color and transparency of each pixel, allowing the computer to perform processing operations regardless of the original file format.
 
-All commands are run from the root of the project, from a terminal:
+This exhibit allows visitors to explore how computers represent and manipulate digital images through an **interactive simulation**. Users can upload or select an image, zoom into specific regions, and examine individual pixels within an enlarged pixel grid. A **format representation module** explains how common image formats differ in storage and compression while demonstrating that they ultimately become pixel data when loaded into memory.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+By selecting individual pixels, users can inspect their:
+- RGB values
+- Opacity
+- Hexadecimal and binary representations
+- How those values are stored in memory
 
-## 👀 Want to learn more?
+Visitors can also apply **image processing operations** such as grayscale conversion, brightness adjustment, scaling, and rotation while viewing the **mathematical formulas and matrix transformations** that drive these changes.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## Key Features
+
+### Image Input
+- Upload an image or select from a set of sample images
+- Interactive **split-screen interface** displaying the original image and a data exploration panel
+- **Region selection tool** for zooming into specific areas of an image
+- Enlarged **pixel grid** for visualizing individual pixels and their spatial arrangement
+
+### Image Format Representation Module
+Supports:
+- **PNG**
+- **BMP**
+- **HEIC**
+- **JPG**
+
+Educational comparison includes:
+- How image data is stored
+- Compression methods used by each format
+- **Transparency support**
+- Relative storage requirements
+- How image files are **decoded into pixel data**
+
+### Image Pipeline Visualization
+1. Storage Device  
+2. Image File  
+3. Decoding Process  
+4. Memory Representation  
+5. Display Output  
+
+### Interactive Pixel Inspection Tool
+Activated when a pixel is selected, displaying:
+- Pixel coordinates
+- **RGB values**
+- **HSL values**
+- **Opacity (Alpha) values**
+- **Hexadecimal representation**
+- **Binary representation**
+- Approximate memory layout of the pixel's data
+
+### Memory Representation Visualization
+Shows how pixels are stored as **numerical values** after decoding.
+
+### Real-Time Image Processing Operations
+- **Grayscale conversion**
+- **Brightness adjustment**
+- **Color inversion**
+- **Scaling**
+- **Rotation**
+
+### Mathematical Visualizations
+Accompanying image transformations, including:
+- Arithmetic operations on pixel values
+- **Matrix-based transformations** used for scaling and rotation
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|---|---|
+| Framework | **Astro 6** |
+| UI Library | **React 19** |
+| Styling | **Tailwind CSS** |
+| Graphics | **Native Canvas API** |
+| Input Handling | **Native Pointer Events** |
+| Math Engine | **Mathjs** |
+| File Upload | **react-dropzone** |
+| Animation | **Framer Motion** |
+| Components | **shadcn/ui** |
+
+---
+
+
+## Repository
+
+[**S04 Group 8 CSARCH2 Virtual Exhibit — GitHub**](https://github.com/PrinceMPS/CSARCH2-Virtual-Exhibit)
