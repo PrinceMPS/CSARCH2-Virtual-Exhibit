@@ -44,7 +44,7 @@ Supports:
 - **PNG**
 - **BMP**
 - **HEIC**
-- **JPG**
+- <mark>**JPG**</mark>
 
 Educational comparison includes:
 - **How image data is stored**
@@ -64,7 +64,7 @@ Educational comparison includes:
 Activated when a pixel is selected, displaying:
 - Pixel coordinates
 - **RGB values**
-- **HSB and HSL values**
+- <mark>**HSB and HSL values**</mark>
 - **Opacity (Alpha) values**
 - **Hexadecimal representation**
 - **Binary representation**
@@ -108,9 +108,3 @@ Accompanying image transformations, including:
 <img src="Revised_Snapshot.png" height="600">
  
  
----
-
-
-## Repository
-
-[**S04 Group 8 CSARCH2 Virtual Exhibit — GitHub**](https://github.com/PrinceMPS/CSARCH2-Virtual-Exhibit)
