@@ -39,39 +39,39 @@ Visitors can also apply **image processing operations** such as grayscale conver
 - **Region selection tool** for zooming into specific areas of an image
 - Enlarged **pixel grid** for visualizing individual pixels and their spatial arrangement
 
-### Image Format Representation Module
-Supports:
-- **PNG**
-- **BMP**
-- **HEIC**
+### <mark>Image Format Representation Module</mark>
+<mark>Supports:</mark>
+- <mark>**PNG**</mark>
+- <mark>**BMP**</mark>
+- <mark>**HEIC**</mark>
 - <mark>**JPG**</mark>
 
-Educational comparison includes:
-- **How image data is stored**
-- **Compression methods used by each format**
-- **Transparency support**
-- **Relative storage requirements**
-- How image files are **decoded into pixel data**
+<mark>Educational comparison includes:</mark>
+- <mark>**How image data is stored**</mark>
+- <mark>**Compression methods used by each format**</mark>
+- <mark>**Transparency support**</mark>
+- <mark>**Relative storage requirements**</mark>
+- <mark>How image files are **decoded into pixel data**</mark>
 
-### Image Pipeline Visualization
-1. Storage Device  
-2. Image File  
-3. Decoding Process  
-4. Memory Representation  
-5. Display Output  
+### <mark>Image Pipeline Visualization</mark>
+1. <mark>Storage Device  </mark>
+2. <mark>Image File  </mark>
+3. <mark>Decoding Process  </mark>
+4. <mark>Memory Representation  </mark>
+5. <mark>Display Output  </mark>
 
-### Interactive Pixel Inspection Tool
-Activated when a pixel is selected, displaying:
-- Pixel coordinates
-- **RGB values**
+### <mark>Interactive Pixel Inspection Tool
+<mark>Activated when a pixel is selected, displaying:</mark>
+- <mark>Pixel coordinates</mark>
+- <mark>**RGB values**</mark>
 - <mark>**HSB and HSL values**</mark>
-- **Opacity (Alpha) values**
-- **Hexadecimal representation**
-- **Binary representation**
-- Approximate memory layout of the pixel's data
+- <mark>**Opacity (Alpha) values**</mark>
+- <mark>**Hexadecimal representation**</mark>
+- <mark>**Binary representation**</mark>
+- <mark>Approximate memory layout of the pixel's data</mark>
 
-### Memory Representation Visualization
-Shows how pixels are stored as **numerical values** after decoding.
+### <mark>Memory Representation Visualization</mark>
+<mark>Shows how pixels are stored as **numerical values** after decoding.</mark>
 
 ### Real-Time Image Processing Operations
 - **Grayscale conversion**
@@ -80,10 +80,10 @@ Shows how pixels are stored as **numerical values** after decoding.
 - **Scaling**
 - **Rotation**
 
-### Mathematical Visualizations
-Accompanying image transformations, including:
-- Arithmetic operations on pixel values
-- **Matrix-based transformations** used for scaling and rotation
+### <mark>Mathematical Visualizations</mark>
+<mark>Accompanying image transformations, including:</mark>
+- <mark>Arithmetic operations on pixel values</mark>
+- <mark>**Matrix-based transformations** used for scaling and rotation</mark>
 
 ---
 
