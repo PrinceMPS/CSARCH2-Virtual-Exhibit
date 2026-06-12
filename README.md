@@ -103,9 +103,9 @@ Accompanying image transformations, including:
 
 ---
  
-## 🎨 Style Guide Snapshot (1920 x 2482)
+## 🎨 Style Guide Snapshot
  
-<img src="Snapshot.png" height="600">
+<img src="Revised_Snapshot.png" height="600">
  
  
 ---
