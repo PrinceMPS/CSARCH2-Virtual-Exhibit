@@ -47,10 +47,10 @@ Supports:
 - **JPG**
 
 Educational comparison includes:
-- How image data is stored
-- Compression methods used by each format
+- **How image data is stored**
+- **Compression methods used by each format**
 - **Transparency support**
-- Relative storage requirements
+- **Relative storage requirements**
 - How image files are **decoded into pixel data**
 
 ### Image Pipeline Visualization
@@ -101,6 +101,13 @@ Accompanying image transformations, including:
 | Animation | **Framer Motion** |
 | Components | **shadcn/ui** |
 
+---
+ 
+## 🎨 Style Guide Snapshot (1920 x 2482)
+ 
+<img src="Snapshot.png" height="600">
+ 
+ 
 ---
 
 
