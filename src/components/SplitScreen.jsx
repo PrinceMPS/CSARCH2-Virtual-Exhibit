@@ -1,6 +1,5 @@
 // SplitScreen + RegionSelector (~20% of work) kei
 // Build SplitScreen.jsx — resizable split view (left: original image canvas, right: controls panel) using Pointer Events for the divider
-// Build RegionSelector.jsx — draggable selection rectangle overlay on the image canvas, emits {x, y, w, h} for PixelGrid
 // Wire the original-image canvas display on the left side
 
 import React from 'react';
