@@ -1,11 +1,17 @@
-// SplitScreen + RegionSelector (~20% of work) kei
 // Build SplitScreen.jsx — resizable split view (left: original image canvas, right: controls panel) using Pointer Events for the divider
-// Wire the original-image canvas display on the left side
 
 import React from 'react';
 import RegionSelector from './RegionSelector';
 
 export default function SplitScreen() {
+  const [imageUrl, setImageUrl] = useState('image.png'); 
+
+  const handleRegionChange = (coords) => {
+    console.log("Current tracking matrix region:", coords);
+    // TODO: impl pixel grid here with the given coords
+
+  };
+
   return (
   <div id="container" className="p-6 bg-neutral-900 text-white min-h-screen flex flex-col gap-6">
       <div id="button-container" className="flex gap-4">
@@ -24,6 +30,7 @@ export default function SplitScreen() {
               onRegionChange={handleRegionChange}
             />
 
+            // TODO: Properly implement the onClick={} for each with proper zoom and rotation handling
             <div id="floating-controls" 
             className="absolute bottom-4 left-4 z-50 flex items-center gap-2 bg-neutral-900/90 px-3 py-1.5 rounded-full border border-neutral-700 pointer-events-auto select-none">
               <button
