@@ -23,13 +23,13 @@ export default function App() {
 
     if (!currentImage) {
         return (
-            <div className="w-full h-full bg-[#111111] p-10">
-                <div className="flex flex-col gap-10 items-center">
+            <div class="w-full h-full bg-[#111111] p-10">
+                <div class=" flex flex-col gap-10 items-center">
                     {/* color swatch strip goes here */}
-                    <h1 className="text-blue-400 font-bold text-[32px]">
+                    <h1 class="text-blue-400 font-bold text-[32px]">
                         How Computers See Images
                     </h1>
-                    <p className="text-white text-justify m-10">
+                    <p class="text-white text-justify m-10">
                         Every digital image undergoes a series of steps before
                         it appears on a screen. Images may be stored in formats
                         such as
@@ -53,9 +53,12 @@ export default function App() {
 
     // not sure if this is right/if this is where each component is meant to go.
     return (
-        <SplitScreen
-            imageUrl={currentImage.url}
-            onChangeImage={() => setCurrentImage(null)}
-        />
+        <div>
+            <button onClick={() => setCurrentImage(null)}>Change image</button>
+            <div>
+                {/* SplitScreen: original canvas + PixelGrid/PixelInspector */}
+                <SplitScreen />
+            </div>
+        </div>
     );
 }
