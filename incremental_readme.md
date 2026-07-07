@@ -129,3 +129,5 @@ See Proposal: [Original Proposal](./README.md)
 -   Educational Text Content on each page
 
 ---
+
+## Use of Generative AI/LLM
