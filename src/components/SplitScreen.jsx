@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import RegionSelector from './RegionSelector';
-import ImageInput from './ImageInput';
 
 /**
  * @param {{
+ *   imageUrl: string,
+ *   onChangeImage?: () => void,
  *   onRegionChange?: (coords: any) => void,
  * }} props
  */
 
 
-export default function SplitScreen({ onRegionChange }) {
-  const [selectedImage, setSelectedImage] = useState(null);
-
+export default function SplitScreen({ imageUrl, onChangeImage, onRegionChange }) {
   const handleRegionChange = (coords) => {
     console.log("Current tracking matrix region:", coords);
     // TODO: implement pixel grid here
@@ -23,7 +22,7 @@ export default function SplitScreen({ onRegionChange }) {
         <button
           type="button"
           className="px-4 py-2 bg-sky-500 rounded font-medium"
-          onClick={() => setSelectedImage(null)}
+          onClick={onChangeImage}
         >
           Change Image
         </button>
@@ -31,14 +30,14 @@ export default function SplitScreen({ onRegionChange }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="relative aspect-square w-full overflow-hidden">
-          {selectedImage ? (
+          {imageUrl ? (
             <RegionSelector
-              imageUrl={selectedImage.url}
+              imageUrl={imageUrl}
               onRegionChange={onRegionChange ?? handleRegionChange}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-neutral-800 text-neutral-400">
-              <ImageInput onImageLoad={setSelectedImage} />
+              No image loaded
             </div>
           )}
           
