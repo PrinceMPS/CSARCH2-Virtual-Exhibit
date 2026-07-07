@@ -27,19 +27,19 @@ export default function ExhibitApp() {
 
     if (!currentImage) {
         return (
-            <div>
+            <div class="bg-[#111111] flex flex-col gap-10 items-center">
                 {/* color swatch strip goes here */}
-                <h1>How Computers See Images</h1>
-                <p>
+                <h1 class="text-blue-400 font-bold text-[32px]">How Computers See Images</h1>
+                <p class="text-white text-justify m-10">
                     Every digital image undergoes a series of steps before it
                     appears on a screen. Images may be stored in formats such as
-                    <b>PNG, JPG/JPEG, BMP, HEIC</b>, etc, each using different
+                    <b> PNG, JPG/JPEG, BMP, HEIC </b>, etc, each using different
                     methods for organizing and compressing data. However, before
                     an image can be displayed or modified, the computer must
-                    <b>decode the file</b>
+                    <b> decode the file </b>
                     and load its contents into memory as <b>pixel data</b>. Once
                     in memory, the image is represented as
-                    <b>numerical values</b>
+                    <b> numerical values </b>
                     describing the color and transparency of each pixel,
                     allowing the computer to perform processing operations
                     regardless of the original file format.
