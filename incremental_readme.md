@@ -113,3 +113,21 @@ See Proposal: [Original Proposal](./README.md)
 **Design Decisions**
 
 -   Focusing on simple, achievable, functional layouts but leaving room for improvement later.
+
+---
+
+## Milestones to be Accomplished by Final Submission
+
+-   PixelGrid.jsx – for the enlarged pixel grid when a region is selected
+-   PixelInspector.jsx – will display the coordinates, RGB, HSB/HSL, Alpha, Hex, Binary, approximate memory layout
+-   imageProcessing.js – handles transform functions: grayscale, rotation, brightness
+-   ImageProcessing.jsx – controls for each operation
+-   MathVisualizer.jsx – renders transform function formulas
+-   PipelineVisualizer.jsx – flowchart visualizer for storage
+-   FormatModule.jsx – comparison cards for JPG/JPEG, PNG, BMP, HEIC
+-   MemoryVisualization.jsx - compact hex/binary table showing raw pixel data in RAM
+-   Educational Text Content on each page
+
+---
+
+## Use of Generative AI/LLM
