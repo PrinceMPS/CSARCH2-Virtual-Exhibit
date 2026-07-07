@@ -1,6 +1,7 @@
 // src/components/ExhibitApp.jsx
 import { useState } from "react";
 import ImageInput from "../components/ImageInput.jsx";
+import SplitScreen from "./SplitScreen.jsx";
 //uncomment the imports below when ready. Remove if unnecessary.
 /*
 import SplitScreen from "../components/SplitScreen.jsx";
@@ -55,6 +56,7 @@ export default function ExhibitApp() {
             <button onClick={() => setCurrentImage(null)}>Change image</button>
             <div>
                 {/* SplitScreen: original canvas + PixelGrid/PixelInspector */}
+                <SplitScreen />
             </div>
             <div>
                 How it works in math
