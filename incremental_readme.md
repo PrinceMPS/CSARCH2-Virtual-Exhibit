@@ -56,7 +56,7 @@ See Proposal: [Original Proposal](./README.md)
 
 -   Removed unnecessary placeholder files
 -   Created types.js helper – stores user-defined data types
--   Created initial index.md page –
+-   Created initial index.mdx page –
 -   Created initial ImageInput.jsx component – For image file uploading
 -   Created initial imageLoader.js helper – For image processing and storage
 -   Created initial App.jsx component – The actual
