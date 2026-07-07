@@ -19,44 +19,19 @@ import RegionSelector from "../components/RegionSelector.jsx";
  * @returns {JSX.Element}
  */
 export default function App() {
-    const [currentImage, setCurrentImage] = useState(null);
-
-    if (!currentImage) {
-        return (
-            <div class="w-full h-full bg-[#111111] p-10">
-                <div class=" flex flex-col gap-10 items-center">
-                    {/* color swatch strip goes here */}
-                    <h1 class="text-blue-400 font-bold text-[32px]">
-                        How Computers See Images
-                    </h1>
-                    <p class="text-white text-justify m-10">
-                        Every digital image undergoes a series of steps before
-                        it appears on a screen. Images may be stored in formats
-                        such as
-                        <b> PNG, JPG/JPEG, BMP, HEIC,</b> with each using
-                        different methods for organizing and compressing data.
-                        However, before an image can be displayed or modified,
-                        the computer must
-                        <b> decode the file </b>
-                        and load its contents into memory as <b>pixel data</b>.
-                        Once in memory, the image is represented as
-                        <b> numerical values </b>
-                        describing the color and transparency of each pixel,
-                        allowing the computer to perform processing operations
-                        regardless of the original file format.
-                    </p>
-                    <ImageInput onImageLoad={setCurrentImage} />
-                </div>
-            </div>
-        );
-    }
-
-    // not sure if this is right/if this is where each component is meant to go.
     return (
-        <div>
-            <button onClick={() => setCurrentImage(null)}>Change image</button>
-            <div>
-                {/* SplitScreen: original canvas + PixelGrid/PixelInspector */}
+        <div className="w-full h-full bg-[#111111] p-10">
+            <div className="flex flex-col gap-10">
+                <h1 className="text-blue-400 font-bold text-[32px]">
+                    How Computers See Images
+                </h1>
+                <p className="text-white text-justify m-4 max-w-4xl">
+                    Every digital image undergoes a series of steps before it appears on a
+                    screen. Images may be stored in formats such as PNG, JPG/JPEG, BMP,
+                    HEIC, with each using different methods for organizing and compressing
+                    data. Before an image can be displayed or modified, the computer must
+                    decode the file and load its contents into memory as pixel data.
+                </p>
                 <SplitScreen />
             </div>
         </div>
