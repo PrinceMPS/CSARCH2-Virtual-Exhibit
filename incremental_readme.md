@@ -133,3 +133,9 @@ See Proposal: [Original Proposal](./README.md)
 ## Use of Generative AI/LLM
 
 DeepSeek was used to help identify and delegate tasks into relevant milestone divisions.
+
+---
+
+## Deployment
+
+See deployment link: [Virtual Exhibit](https://csarch-2-virtual-exhibit-theta.vercel.app/?fbclid=IwY2xjawS6AS5leHRuA2FlbQIxMABicmlkETFMZHV2bVNnU3hCVmk4MXMyc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmsULAcmh8ULT2DKQy42Bmo1ITYl_qc6f1dc4CwjOE_RzGtf4JLyTnPphdlH_aem_natUjULwv7nzu2Tcidmw8g)
