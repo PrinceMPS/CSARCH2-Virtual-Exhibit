@@ -16,7 +16,7 @@ import { loadImage, loadSample, SAMPLE_IMAGES } from "../lib/imageLoader.js";
  *   acceptedTypes?: string[],
  * }} props
  */
-export default function inputImage({
+export default function InputImage({
     onImageLoad,
     onError,
     maxFileSizeMB = 10,
@@ -98,29 +98,26 @@ export default function inputImage({
     }
 
     return (
-        <div className="w-full max-w-xl mx-auto space-y-4">
+        <div className="w-[70%] h-50 gap-10 max-w-xl mx-auto space-y-4 flex flex-row">
+
             <div
                 {...getRootProps()}
-                className={[
-                    "flex flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed p-8 text-center cursor-pointer transition-colors",
-                    isDragActive
-                        ? "border-blue-500 bg-blue-50"
-                        : "border-gray-300 hover:border-gray-400",
-                ].join(" ")}
+                className={
+                    "h-50 w-70 flex flex-col items-center justify-center gap-2 rounded-lg border-3 border-blue-400 border-dashed p-8 text-center cursor-pointer group transition-colors duration-500 hover:bg-white isDragActive ? 'bg-blue-50' : ''"}
             >
                 <input {...getInputProps()} />
                 <UploadCloud
-                    className="w-8 h-8 text-gray-400"
+                    className="w-8 h-8 text-gray-400 group-hover:text-gray-700 transition-colors duration-500"
                     aria-hidden="true"
                 />
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
                     {isDecoding
                         ? "Decoding…"
                         : isDragActive
                         ? "Drop the image here"
                         : "Drag an image here, or click to browse"}
                 </p>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-400 group-hover:text-gray-600 transition-colors duration-500">
                     PNG, JPG/JPEG, BMP, WEBP — up to {maxFileSizeMB}MB
                 </p>
             </div>
@@ -135,10 +132,11 @@ export default function inputImage({
                 </div>
             )}
 
-            <div>
+            <div className="w-65 flex flex-col items-center justify-center gap-2 rounded-lg border-3 border-blue-400 border-dashed p-8 text-center cursor-pointer
+                    group transition-colors duration-500 hover:bg-white">
                 <p className="mb-2 flex items-center gap-1 text-sm font-medium text-gray-600">
                     <ImageIcon className="w-4 h-4" aria-hidden="true" />
-                    Or try a sample
+                    Or try a sample photo
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {SAMPLE_IMAGES.map((sample) => (
