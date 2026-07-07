@@ -57,10 +57,7 @@ export default function App() {
             <button onClick={() => setCurrentImage(null)}>Change image</button>
             <div>
                 {/* SplitScreen: original canvas + PixelGrid/PixelInspector */}
-                <SplitScreen
-                    selectedImage={currentImage}
-                    onChangeImage={() => setCurrentImage(null)}
-                />
+                <SplitScreen />
             </div>
         </div>
     );

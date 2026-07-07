@@ -4,14 +4,13 @@ import ImageInput from './ImageInput';
 
 /**
  * @param {{
- *   selectedImage?: { url?: string } | null,
- *   onChangeImage?: () => void,
  *   onRegionChange?: (coords: any) => void,
  * }} props
  */
 
 
-export default function SplitScreen({ selectedImage, onChangeImage, onRegionChange }) {
+export default function SplitScreen({ onRegionChange }) {
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const handleRegionChange = (coords) => {
     console.log("Current tracking matrix region:", coords);
@@ -24,7 +23,7 @@ export default function SplitScreen({ selectedImage, onChangeImage, onRegionChan
         <button
           type="button"
           className="px-4 py-2 bg-sky-500 rounded font-medium"
-          onClick={onChangeImage}
+          onClick={() => setSelectedImage(null)}
         >
           Change Image
         </button>
@@ -39,7 +38,7 @@ export default function SplitScreen({ selectedImage, onChangeImage, onRegionChan
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-neutral-800 text-neutral-400">
-              No image selected
+              <ImageInput onImageLoad={setSelectedImage} />
             </div>
           )}
           
