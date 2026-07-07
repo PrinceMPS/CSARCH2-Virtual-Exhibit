@@ -4,7 +4,7 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { UploadCloud, ImageIcon, AlertCircle } from "lucide-react";
-import { loadImage, loadSample, SAMPLE_IMAGES } from "../lib/ImageLoader.js";
+import { loadImage, loadSample, SAMPLE_IMAGES } from "../lib/imageLoader.js";
 
 /**
  * A React component that allows users to upload an image file or select a sample image. It handles image decoding and error reporting.
