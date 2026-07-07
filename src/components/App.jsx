@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import ImageInput from "../components/ImageInput.jsx";
 import SplitScreen from "../components/SplitScreen.jsx";
@@ -11,7 +10,6 @@ import RegionSelector from "../components/RegionSelector.jsx";
 // import PipelineVisualizer from "../components/PipelineVisualizer.jsx";
 // import MemoryVisualization from "../components/MemoryVisualization.jsx";
 
-
 /**
  * The main exhibit application component that manages the state of the current image and renders the appropriate UI based on whether an image is loaded or not.
  *
@@ -20,7 +18,7 @@ import RegionSelector from "../components/RegionSelector.jsx";
  *
  * @returns {JSX.Element}
  */
-export default function ExhibitApp() {
+export default function App() {
     const [currentImage, setCurrentImage] = useState(null);
 
     if (!currentImage) {
@@ -28,16 +26,20 @@ export default function ExhibitApp() {
             <div class="w-full h-full bg-[#111111] p-10">
                 <div class=" flex flex-col gap-10 items-center">
                     {/* color swatch strip goes here */}
-                    <h1 class="text-blue-400 font-bold text-[32px]">How Computers See Images</h1>
+                    <h1 class="text-blue-400 font-bold text-[32px]">
+                        How Computers See Images
+                    </h1>
                     <p class="text-white text-justify m-10">
-                        Every digital image undergoes a series of steps before it
-                        appears on a screen. Images may be stored in formats such as
-                        <b> PNG, JPG/JPEG, BMP, HEIC,</b> with each using different
-                        methods for organizing and compressing data. However, before
-                        an image can be displayed or modified, the computer must
+                        Every digital image undergoes a series of steps before
+                        it appears on a screen. Images may be stored in formats
+                        such as
+                        <b> PNG, JPG/JPEG, BMP, HEIC,</b> with each using
+                        different methods for organizing and compressing data.
+                        However, before an image can be displayed or modified,
+                        the computer must
                         <b> decode the file </b>
-                        and load its contents into memory as <b>pixel data</b>. Once
-                        in memory, the image is represented as
+                        and load its contents into memory as <b>pixel data</b>.
+                        Once in memory, the image is represented as
                         <b> numerical values </b>
                         describing the color and transparency of each pixel,
                         allowing the computer to perform processing operations
@@ -58,7 +60,5 @@ export default function ExhibitApp() {
                 <SplitScreen />
             </div>
         </div>
-        );
-    
-    
+    );
 }
