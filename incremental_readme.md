@@ -131,3 +131,5 @@ See Proposal: [Original Proposal](./README.md)
 ---
 
 ## Use of Generative AI/LLM
+
+DeepSeek was used to help identify and delegate tasks into relevant milestone divisions.
