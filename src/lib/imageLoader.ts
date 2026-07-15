@@ -11,8 +11,20 @@ const MAX_SIZE_MB = 10;
  * Existing images that can be loaded into the exhibit without uploading.
  * @type {SampleImage[]}
  */
-export const SAMPLE_IMAGES = [
-    //TODO: put sample images here
+export const SAMPLE_IMAGES: SampleImage[] = [
+    //TODO: replace with sample images
+    {
+        id: "1",
+        name: "Sample 1",
+        desc: "A beautiful sample image",
+        url: "sample1.png",
+    },
+    {
+        id: "2",
+        name: "Sample 2",
+        desc: "Another stunning sample image",
+        url: "sample2.png",
+    },
 ];
 
 /**

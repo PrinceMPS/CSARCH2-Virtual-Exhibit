@@ -4,7 +4,6 @@ import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { UploadCloud, ImageIcon, AlertCircle } from "lucide-react";
 import { loadImage, loadSample, SAMPLE_IMAGES } from "../lib/imageLoader.js";
-import { max } from "mathjs";
 
 interface InputImageProps {
     onImageLoad: (image: DecodedImage) => void;
@@ -141,7 +140,7 @@ export default function InputImage({
                             type="button"
                             onClick={() => handleSampleClick(sample)}
                             disabled={isDecoding}
-                            title={sample.description}
+                            title={sample.desc}
                             className="rounded-md border border-gray-200 p-2 text-xs text-gray-600 hover:border-gray-400 hover:bg-gray-50 disabled:opacity-50 transition-colors"
                         >
                             {sample.name}
