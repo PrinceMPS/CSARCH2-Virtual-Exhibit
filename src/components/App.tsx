@@ -1,12 +1,13 @@
 import { useState } from "react";
-import ImageInput from "../components/ImageInput.jsx";
-import SplitScreen from "../components/SplitScreen.jsx";
+import type { DecodedImage } from "../lib/types.ts";
+import ImageInput from "./ImageInput.tsx";
+import SplitScreen from "./SplitScreen.jsx";
 // import PixelInspector from "../components/PixelInspector.jsx";
 // import PixelGrid from "../components/PixelGrid.jsx";
 // import ImageProcessor from "../components/ImageProcessor.jsx";
 // import FormatModule from "../components/FormatModule.jsx";
 // import MathVisualizer from "../components/MathVisualizer.jsx";
-import RegionSelector from "../components/RegionSelector.jsx";
+import RegionSelector from "./RegionSelector.jsx";
 // import PipelineVisualizer from "../components/PipelineVisualizer.jsx";
 // import MemoryVisualization from "../components/MemoryVisualization.jsx";
 
@@ -19,17 +20,17 @@ import RegionSelector from "../components/RegionSelector.jsx";
  * @returns {JSX.Element}
  */
 export default function App() {
-    const [currentImage, setCurrentImage] = useState(null);
+    const [currentImage, setCurrentImage] = useState<DecodedImage | null>(null);
 
     if (!currentImage) {
         return (
-            <div class="w-full h-full bg-[#111111] p-10">
-                <div class=" flex flex-col gap-10 items-center">
+            <div className="w-full h-full bg-[#111111] p-10">
+                <div className=" flex flex-col gap-10 items-center">
                     {/* color swatch strip goes here */}
-                    <h1 class="text-blue-400 font-bold text-[32px]">
+                    <h1 className="text-blue-400 font-bold text-[32px]">
                         How Computers See Images
                     </h1>
-                    <p class="text-white text-justify m-10">
+                    <p className="text-white text-justify m-10">
                         Every digital image undergoes a series of steps before
                         it appears on a screen. Images may be stored in formats
                         such as
