@@ -1,13 +1,15 @@
-/** @typedef {import('./types.js').DecodedImage} DecodedImage */
-/** @typedef {import('./types.js').SampleImageMeta} SampleImageMeta */
-/** @typedef {import('./types.js').ImageLoadError} ImageLoadError */
+import type {
+    DecodedImage,
+    SampleImage,
+    ImageLoadError,
+} from "../lib/types.js";
 
 const ACCEPTED_TYPES = ["image/png", "image/jpeg", "image/bmp", "image/webp"];
 const MAX_SIZE_MB = 10;
 
 /**
  * Existing images that can be loaded into the exhibit without uploading.
- * @type {SampleImageMeta[]}
+ * @type {SampleImage[]}
  */
 export const SAMPLE_IMAGES = [
     //TODO: put sample images here
@@ -17,27 +19,30 @@ export const SAMPLE_IMAGES = [
  * Converts a File object into a DecodedImage, which contains the raw pixel data and other metadata.
  *
  * @param {File} file
- * @param {{ maxSizeMB?: number, acceptedTypes?: string[] }} [options]
+ * @param {Partial<{ maxSizeMB: number, acceptedTypes: string[] }>} [options]
  * @returns {Promise<DecodedImage>}
  * @throws {ImageLoadError}
  */
-export async function loadImage(file, options = {}) {
+export async function loadImage(
+    file: File,
+    options: Partial<{ maxSizeMB: number; acceptedTypes: string[] }> = {}
+): Promise<DecodedImage> {
     const maxSizeMB = options.maxSizeMB ?? MAX_SIZE_MB;
     const acceptedTypes = options.acceptedTypes ?? ACCEPTED_TYPES;
 
     //error handling for unsupported file types and file size limit
     if (!acceptedTypes.includes(file.type)) {
-        throw /** @type {ImageLoadError} */ ({
+        throw /** @type {ImageLoadError} */ {
             code: "unsupported_type",
             mssg: `Please upload one of: ${acceptedTypes.join(", ")}.`,
-        });
+        };
     }
 
     if (file.size > maxSizeMB * 1024 * 1024) {
-        throw /** @type {ImageLoadError} */ ({
+        throw /** @type {ImageLoadError} */ {
             code: "file_too_large",
             mssg: `"${file.name}" exceeds the ${maxSizeMB}MB limit.`,
-        });
+        };
     }
 
     const url = await toURL(file);
@@ -57,21 +62,21 @@ export async function loadImage(file, options = {}) {
             canvas,
         };
     } catch (err) {
-        throw /** @type {ImageLoadError} */ ({
+        throw /** @type {ImageLoadError} */ {
             code: "decode_failed",
             message: `Could not decode "${file.name}". The file may be corrupted.`,
-        });
+        };
     }
 }
 
 /**
  * Converts a sample image metadata object into a DecodedImage, which contains the raw pixel data and other metadata.
  *
- * @param {SampleImageMeta} sample
+ * @param {SampleImage} sample
  * @returns {Promise<DecodedImage>}
  * @throws {ImageLoadError}
  */
-export async function loadSample(sample) {
+export async function loadSample(sample: SampleImage): Promise<DecodedImage> {
     try {
         const { canvas, imageData, width, height } = await toCanvas(sample.url);
         return {
@@ -87,20 +92,20 @@ export async function loadSample(sample) {
             canvas,
         };
     } catch (err) {
-        throw /** @type {ImageLoadError} */ ({
+        throw /** @type {ImageLoadError} */ {
             code: "network_error",
             message: `Could not load sample image "${sample.name}".`,
-        });
+        };
     }
 }
 
 //Helpers below this line
 
 /** @param {File} file @returns {Promise<string>} */
-function toURL(file) {
+function toURL(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
-        reader.onload = () => resolve(/** @type {string} */ (reader.result));
+        reader.onload = () => resolve(reader.result as string);
         reader.onerror = () => reject(reader.error);
         reader.readAsDataURL(file);
     });
@@ -110,9 +115,14 @@ function toURL(file) {
  * image to canvas conversion helper
  *
  * @param {string} src
- * @returns {Promise<{ canvas: HTMLCanvasElement, imageData: ImageData, width: number, height: number }>}
+ * @returns {Promise<{ canvas: HTMLCanvasElement, imageData: ImageData, width: number, height: number}>}
  */
-function toCanvas(src) {
+function toCanvas(src: string): Promise<{
+    canvas: HTMLCanvasElement;
+    imageData: ImageData;
+    width: number;
+    height: number;
+}> {
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.crossOrigin = "anonymous";
@@ -146,8 +156,11 @@ function toCanvas(src) {
 }
 
 /** @param {string} url @returns {string} */
-function inferType(url) {
+function inferType(url: string): string {
     const ext = url.split(".").pop()?.toLowerCase();
+    if (!ext) {
+        return "application/octet-stream"; // Default MIME type
+    }
     return (
         {
             png: "image/png",
